@@ -12,14 +12,14 @@
     <body>
         <form id="form" style="text-align: center,">
         <h1>Registration Form</h1>
-        <p>Name: <input required type="text" id="Name"></p>
-        <p>Email: <input required type="email" id="Email"></p>
-        <p>Password: <input required type="password" id="Password"></p>
-        <p>Date of Birth: <input required type="date" id="DOB" min="1967-11-09" max="2004-11-09"></p>
+        <p>Name: <input required type="text" id="name"></p>
+        <p>Email: <input required type="email" id="email"></p>
+        <p>Password: <input required type="password" id="password"></p>
+        <p>Date of Birth: <input required type="date" id="dob" min="1967-11-09" max="2004-11-09"></p>
         <p><input required type="checkbox" id="term">Accept Terms and Condition</p>
         <input type="submit" id="submit">
     </form>
-    <h1 style="text-align: center;">Entries</h1>
+   <h1 style="text-align: center;">Entries</h1>
     <div style="text-align: center; margin: auto;
     width: 25%;
     border: 5px solid powderblue;
@@ -49,10 +49,10 @@
                 return row;
             }).join("\n");
             const t=`<table><tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Password</th>
-                <th>DOB</th>
+                <th>name</th>
+                <th>email</th>
+                <th>password</th>
+                <th>dob</th>
                 <th>Terms</th>
                 </tr>${table} </table>`;
                 let details=document.getElementById("user");
@@ -60,21 +60,24 @@
         }
         const saveuser=(event)=>{
             event.preventDefault();
-            const name=document.getElementById("Name").value;
-            const email=document.getElementById("Email").value;
-            const password=document.getElementById("Password").value;
-            const dob=document.getElementById("DOB").value;
+            const name=document.getElementById("name").value;
+            const email=document.getElementById("email").value;
+            const password=document.getElementById("password").value;
+            const dob=document.getElementById("dob").value;
             const term=document.getElementById("term").checked;
             const entry={
-                Name,
-                Email,
-                Password,
-                DOB,
+                name,
+                email,
+                password,
+                dob,
                 term
             };
             user.push(entry);
             localStorage.setItem("user",JSON.stringify(user));
             display();
+        
+            
+
         }
         form.addEventListener("submit",saveuser);
         display();
