@@ -1,7 +1,7 @@
 //  listtodos.js
 const db = require("./models/index");
 
-const listtodo = async () => {
+const listTodo = async () => {
   try {
     await db.todo.showList();
   } catch (error) {
@@ -9,5 +9,5 @@ const listtodo = async () => {
   }
 };
 (async () => {
-  await listtodo();
+  await listTodo();
 })();
