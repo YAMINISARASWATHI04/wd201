@@ -1,13 +1,13 @@
-//  listTodos.js
+//  listtodos.js
 const db = require("./models/index");
 
-const listTodo = async () => {
+const listtodo = async () => {
   try {
-    await db.Todo.showList();
+    await db.todo.showList();
   } catch (error) {
     console.error(error);
   }
 };
 (async () => {
-  await listTodo();
+  await listtodo();
 })();
