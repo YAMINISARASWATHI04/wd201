@@ -1,10 +1,10 @@
-// addtodo.js
+// addTodo.js
 var argv = require("minimist")(process.argv.slice(2));
 const db = require("./models/index");
 
-const createtodo = async (params) => {
+const createTodo = async (params) => {
   try {
-    await db.todo.addTask(params);
+    await db.Todo.addTask(params);
   } catch (error) {
     console.error(error);
   }
