@@ -1,9 +1,9 @@
-// completeTodo.js
+// completetodo.js
 var argv = require("minimist")(process.argv.slice(2));
 const db = require("./models/index");
 const markAsComplete = async (id) => {
   try {
-    await db.Todo.markAsComplete(id);
+    await db.todo.markAsComplete(id);
   } catch (error) {
     console.error(error);
   }
@@ -18,5 +18,5 @@ const markAsComplete = async (id) => {
     throw new Error("The id needs to be an integer");
   }
   await markAsComplete(id);
-  await db.Todo.showList();
+  await db.todo.showList();
 })();
