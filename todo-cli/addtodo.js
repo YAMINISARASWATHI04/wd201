@@ -2,7 +2,7 @@
 var argv = require("minimist")(process.argv.slice(2));
 const db = require("./models/index");
 
-const createTodo = async (params) => {
+const createtodo = async (params) => {
   try {
     await db.todo.addTask(params);
   } catch (error) {
