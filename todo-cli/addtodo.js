@@ -1,10 +1,10 @@
-// addTodo.js
+// addtodo.js
 var argv = require("minimist")(process.argv.slice(2));
 const db = require("./models/index");
 
 const createTodo = async (params) => {
   try {
-    await db.Todo.addTask(params);
+    await db.todo.addTask(params);
   } catch (error) {
     console.error(error);
   }
@@ -22,9 +22,9 @@ const getJSDate = (days) => {
   const { title, dueInDays } = argv;
   if (!title || dueInDays === undefined) {
     throw new Error(
-      'title and dueInDays are required. \nSample command: node addTodo.js --title="Buy milk" --dueInDays=-2 '
+      'title and dueInDays are required. \nSample command: node addtodo.js --title="Buy milk" --dueInDays=-2 '
     );
   }
-  await createTodo({ title, dueDate: getJSDate(dueInDays), completed: false });
-  await db.Todo.showList();
+  await createtodo({ title, dueDate: getJSDate(dueInDays), completed: false });
+  await db.todo.showList();
 })();
