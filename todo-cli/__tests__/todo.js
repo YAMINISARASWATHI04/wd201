@@ -1,6 +1,6 @@
-const todoList = require("../todo");
+const todolist = require("../todo");
 
-const { add, markAsComplete, all, dueToday, dueLater, overdue } = todoList();
+const { add, markAsComplete, all, duetoday, duelater, oveDue } = todolist();
 
 describe("Todo test suite", () => {
     test("should add new todo", () => {
@@ -28,7 +28,7 @@ describe("Todo test suite", () => {
     expect(all.length).toBe(3);
     });
 
-    test("should mark a todo as complete", () => {
+    test("should mark a Todo as complete", () => {
         
         expect(all[0].completed).toBe(false);
     // Mark the todo as complete
@@ -37,22 +37,22 @@ describe("Todo test suite", () => {
         expect(all[0].completed).toBe(true);
     });
 
-    test("should retrive a todo as duetoday", () => {
+    test("should retrive a Todo as duetoday", () => {
         expect(all.length).toBe(3);
-        const k = dueToday();
+        const k = duetoday();
         console.log(k);
         expect(k.length).toBe(1);
     });
-    test("should retrive a todo as overdue", () => {
+    test("should retrive a Todo as overDue", () => {
         let k = [];
             expect(k.length).toBe(0);
-        k = overdue();
+        k = overDue();
         expect(k.length).toBe(1);
     });
-    test("should retrive a todo as laterdue", () => {
+    test("should retrive a Todo as laterdue", () => {
         let k = [];
         expect(k.length).toBe(0);
-        k = dueLater();
+        k = duelater();
         expect(k.length).toBe(1);
     });
 });
