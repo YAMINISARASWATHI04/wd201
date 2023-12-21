@@ -8,8 +8,8 @@ describe("Todo test suite", () => {
         const date = new Date();
         const kd = new Date(date);
         const md = new Date(date);
-        td.setDate(date.getDate() + 1);
-        yd.setDate(date.getDate() - 1);
+        kd.setDate(date.getDate() + 1);
+        md.setDate(date.getDate() - 1);
         add({
             title: "Todo test",
             completed: false,
